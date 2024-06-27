@@ -9,12 +9,28 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
+
+            <!-- Adresse -->
+            <div class="mt-4">
+                <x-input-label for="adresses" :value="__('Adresse')" />
+                <x-text-input id="adresses" class="block mt-1 w-full" type="text" name="adresses" :value="old('adresses')" required autocomplete="address" />
+                <x-input-error :messages="$errors->get('adresses')" class="mt-2" />
+            </div>
+
+            <!-- Date de naissance -->
+            <div class="mt-4">
+                <x-input-label for="date_de_naissance" :value="__('Date de naissance')" />
+                <x-text-input id="date_de_naissance" class="block mt-1 w-full" type="date" name="date_de_naissance" :value="old('date_de_naissance')" required autocomplete="bday" />
+                <x-input-error :messages="$errors->get('date_de_naissance')" class="mt-2" />
+            </div>
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />adresses
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+        
 
         <!-- Password -->
         <div class="mt-4">
