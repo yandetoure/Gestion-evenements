@@ -9,9 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-        body{
-
-        }
         .carousel-item {
             height: 70vh; /* Prendre toute la hauteur de la fenêtre */
         }
@@ -70,6 +67,46 @@
     </style>
 </head>
 <body>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Accueil</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('events.index') }}">Tous les événements</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('events.create') }}">Créer un événement</a>
+                </li>
+                @auth
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('profile.edit') }}">Profil</a>
+                </li>
+                <li class="nav-item">
+                    <form action="{{ route('logout') }}" method="POST" class="nav-link">
+                        @csrf
+                        <button type="submit" class="btn btn-link">Déconnexion</button>
+                    </form>
+                </li>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Connexion</a>
+                </li>
+                @endauth
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
             <div class="carousel-item active">
