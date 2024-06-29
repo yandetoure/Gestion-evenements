@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +10,41 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
+        body{
+=======
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashbaord Association</title>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">
+            <img src="#" alt="logo de l'application">
+        </div>
+        <div class="titre">
+            <h3>Nom de l'association</h3>
+        </div>
+        <div class="profil">
+
+        </div>
+        <div class="notification"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+>>>>>>> 7deb410 (Creation du dashboard Association)
+
+        }
         .carousel-item {
             height: 70vh; /* Prendre toute la hauteur de la fenêtre */
         }
