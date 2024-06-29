@@ -4,7 +4,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EvenementController;
 
+use Spatie\Permission\Models\Role;
+
+
 Route::get('/', function () {
+
+
     return view('welcome');
 });
 
