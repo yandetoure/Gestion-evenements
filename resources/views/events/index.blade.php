@@ -13,9 +13,7 @@
     
     <div class="row">
       <div class="col">
-        <hr>
-        <a href="/index"class="btn btn-primary mb-3" >Accueil</a>
-        <hr>
+        <hr>  
         @if(session('status'))
           <div class="alert alert-success">
             {{ session('status') }}
@@ -26,16 +24,16 @@
           @foreach($evenements as $evenement)
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="{{ $bien->image }}" class="card-img-top" alt="{{ $evenement->nom }}" height="300">
+                <img src="{{ $evenement->image }}" class="card-img-top" alt="{{ $evenement->nom }}" height="300">
                 <div class="card-body">
                   <h5 class="card-title">{{ $evenement->nom }}</h5>
-                  {{-- <p class="card-text">{{ $evenement->description }}</p> --}}
-                  <p class="card-text"><small class="text-muted">{{ $evenement->createted_at }}</small></p>
-                  <p class="card-text"><small class="text-muted">{{ $evenement->date_de_cloture }}</small></p>
-                  <p class="card-text"><strong>Statut:</strong> {{ $evenement->categorie}}</p>
-                  <a href="/edit/{{ $evenement->id }}" class="btn btn-info">Modifier</a>
+                  {{--<p class="card-text">{{ $evenement->description }}</p> --}}
+                  <p class="card-text"><small class="text-muted">Date de cloture des inscription{{ $evenement->createted_at }}</small></p>
+                  <p class="card-text"><small class="text-muted">{{ $evenement->date_cloture_inscription }}</small></p>
+                  <p class="card-text"><strong>Catégorie:</strong> {{ $evenement->categorie}}</p>
+                  <a href="events/{event}/edit" class="btn btn-info">Modifier</a>
                   <a href="/event/{{ $evenement->id }}" class="btn btn-danger">Supprimer</a>
-                  <a href="{{ route('evenement.details', $evenement->id) }}" class="btn btn-primary">Voir les détails</a></div>
+                  <a href="" class="btn btn-primary">Voir les détails</a></div>
                   <br>
                   <br>
               </div>

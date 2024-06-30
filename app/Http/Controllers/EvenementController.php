@@ -29,7 +29,7 @@ class EvenementController extends Controller
             'date_cloture_inscription' => 'required|max:255',
             'image' => 'required|max:255',
             'nombre_places' => 'required|max:255',
-            'categorie' => 'required|in:' . implode(',', Evenement::$enumcategorie),
+            'categorie' => 'required',
         ]);
 
         // Sauvegarde de l'événement dans la base de donnees
