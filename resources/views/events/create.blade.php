@@ -75,11 +75,14 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="statut" class="form-label">Catégorie</label>
+            <label for="categorie" class="form-label">Catégorie ?</label>
                         <select class="form-select" id="statut" name="statut">
-                            @foreach(\App\Models\Event::$enumStatus as $status)
-                                <option value="{{ $status }}">{{ $status }}</option>
-                            @endforeach
+              <option value="Art">Art</option>
+              <option value="Technologie">Technologie</option>
+              <option value="Sport">Sport</option>
+              <option value="Santé">Santé</option>
+              <option value="Éducation">Éducation</option>
+              <option value="Technologie">Technologie</option>
                         </select>
                     </div>
 

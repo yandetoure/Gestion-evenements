@@ -10,7 +10,7 @@ class EvenementController extends Controller
         public function index()
         {
             $evenements = Evenement::all();
-            return view(' ', compact('evenements'));
+            return view('events/index', compact('evenements'));
     }
 
     public function create(){
@@ -35,7 +35,7 @@ class EvenementController extends Controller
         // Sauvegarde de l'événement dans la base de donnees
         Evenement::create($request->all());
         // Redirection vers la page d'accueil des événements
-        return redirect()->route('events.index')->with('success', 'Événement créé avec succes.');
+        return redirect()->route('events/index')->with('success', 'Événement créé avec succes.');
     }
 
     public function show(Evenement $evenement){
