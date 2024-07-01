@@ -37,7 +37,7 @@
                 @endforeach                                                                                                                                                                                                                                                                                                               
             </ul>
 
-                <form action="/event/update" method="POST" class="form-group" enctype="multipart/form-data"> 
+                <form action="event.update" method="POST" class="form-group" enctype="multipart/form-data"> 
                 @csrf
 
                     <div class="mb-3">

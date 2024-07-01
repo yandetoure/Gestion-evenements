@@ -22,20 +22,19 @@
 </head>
 <body>
   <div class="container mt-4">
-
     <div class="card">
       <img src="{{ $evenement->image }}" class="card-img-top" alt="{{ $evenement->image }}">
       <div class="card-body">
         <h5 class="card-title">{{ $evenement->nom }}</h5>
-        <p class="card-text"><small class="text-muted">{{ $evenement->created_at->format('d M Y, H:i') }}</small></p>
-        <p class="card-text">{Description : { $evenement->description }}</p>
+        <p class="card-text"><small class="text-muted">{{ $evenement->created_at}}</small></p>
+        <p class="card-text">Description : {{  $evenement->description }}</p>
         
         <p class="card-text"><small class="text-muted">Catégorie :{{ $evenement->categorie }}</small></p>
 
         <p class="card-text"><small class="text-muted">Nombre de places libres : {{ $evenement->nombre_places }}</small></p>
       </div>
     </div>
-      @endforeach
+
     </div>
 
 

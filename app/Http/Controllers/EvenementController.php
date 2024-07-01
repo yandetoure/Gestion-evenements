@@ -34,12 +34,13 @@ class EvenementController extends Controller
 
         // Sauvegarde de l'événement dans la base de donnees
         Evenement::create($request->all());
-        // Redirection vers la page d'accueil des événements
+
         return redirect()->route('events/index')->with('success', 'Événement créé avec succes.');
     }
 
-    public function show(Evenement $evenement){
-        return view('events.show', compact('evenement'));
+    public function show ($id) {
+        $evenement = Evenement::findOrFail($id);
+        return view('events.details', compact('evenement'));
     }
 
     public function edit(Evenement $evenement){
@@ -58,14 +59,20 @@ class EvenementController extends Controller
             'date_cloture_inscription' => 'required|max:255',
             'image' => 'required|max:255',
             'nombre_places' => 'required|max:255',
-            'categorie' => 'required|in:' . implode(',', Evenement::$enumcategorie),
+            'categorie' => 'required|',
         ]);
 
-        // Mise à jour de l'événement dans la base de données
+        
         $evenement->update($request->all());
-        // Redirection vers la page d'accueil des événement
+        
         return redirect()->route('events.index')->with('success', 'Événement modifié avec succès.');
     
+        }
+
+        public function details ($id) {
+
+            $evenement = Evenement::findOrFail($id);
+            return view('events/details', compact('evenement'));
         }
 
     public function destroy(Evenement $evenement){
