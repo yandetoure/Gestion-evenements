@@ -81,7 +81,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('events.index') }}">Tous les événements</a>
+                    <a class="nav-link" href="{{ route('events.index') }}">Événements</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('events.create') }}">Créer un événement</a>
@@ -99,6 +99,9 @@
                 @else
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">Connexion</a>
+                </li>
+                <li>
+                <a class="nav-link" href="{{ route('register') }}">Inscription</a>
                 </li>
                 @endauth
             </ul>

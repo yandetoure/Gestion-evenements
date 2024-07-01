@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
 Route::prefix('events')->name('events.')->group(function (){
     Route::get('/', [EvenementController::class, 'index'])->name('index');
     Route::get('/create', [EvenementController::class, 'create'])->name('create');
-    Route::post('/store', [EvenementController::class,'store'])->name('store');
+    Route::post('/', [EvenementController::class,'store'])->name('store');
     Route::get('/{event}', [EvenementController::class, 'show'])->name('show');
     Route::get('/{event}/edit', [EvenementController::class, 'edit'])->name('edit');
     Route::put('/{event}', [EvenementController::class, 'update'])->name('update');

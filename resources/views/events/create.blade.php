@@ -18,7 +18,6 @@
     </style>
 </head>
 <body>
-
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2">
@@ -41,7 +40,7 @@
 
     <div class="mb-3">
         <label for="lieu" class="form-label">Lieu</label>
-        <textarea class="form-control" id="lieu" name="lieu" rows="3" required></textarea>
+        <input class="form-control" id="lieu" name="lieu" rows="3" required></input>
     </div>
 
     <div class="mb-3">
