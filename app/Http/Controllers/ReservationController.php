@@ -1,46 +1,33 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
+use App\Models\Evenement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
-    public function index(){
-        // Affiche la liste des réservations
-        return view('reservations.index');
+    public function create(Evenement $evenement)
+    {
+        $user = Auth::user();
+        return view('reservations.create', compact('evenement', 'user'));
     }
 
-    public function create(){
-        // Affiche le formulaire pour réserver un événement
-        return view('reservations.create');
-    }
+    public function store(Request $request, Evenement $evenement)
+    {
+        $user = Auth::user();
 
-    public function store(Request $request){
-        // Validation des données
-        $request->validate([
-            'id_user' => 'required|',
-            'id_evenement' => 'required',
+        Reservation::create([
+            'user_id' => $user->id,
+            'evenement_id' => $evenement->id,
+            'statut' => 'acceptée', // Valeur par défaut
         ]);
 
-        // Sauvegarde de la réservation dans la base de données
-        //...
+        // Envoyer l'email de confirmation ici si nécessaire
 
-        // Redirection vers la page d'accueil des réservations
-        return redirect()->route('reservations.index')->with('success', 'Réservation créée avec succès.');
-    
-        }
-
-    public function show($id){
-        // Affiche la fiche détaillée d'une réservation
-        //...
-        return view('reservations.show', compact('id'));
-    
-        }
-
-    public function edit($id){
-        // Affiche le formulaire pour modifier une réservation
-        //...
-        return view('reservations.edit', compact('id'));
+        return redirect()->route('reservations.create', ['evenement' => $evenement->id])
+            ->with('success', 'Votre réservation a été confirmée.');
     }
 }
+
