@@ -26,6 +26,7 @@ Route::prefix('events')->name('events.')->group(function (){
     Route::get('/{event}/edit', [EvenementController::class, 'edit'])->name('edit');
     Route::put('/{event}', [EvenementController::class, 'update'])->name('update');
     Route::delete('/{event}', [EvenementController::class, 'destroy'])->name('destroy');
+    Route::get('/{id}/details', [EvenementController::class, 'details'])->name('details');
     });
 
 
