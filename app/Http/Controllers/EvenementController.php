@@ -10,11 +10,11 @@ class EvenementController extends Controller
         public function index()
         {
             $evenements = Evenement::all();
-            return view(' ', compact('evenements'));
+            return view('layouts.events.index ', compact('evenements'));
     }
 
     public function create(){
-        return view('events.create');
+        return view('layouts.events.create');
     }
 
     public function store(Request $request){

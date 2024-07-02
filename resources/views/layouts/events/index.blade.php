@@ -23,7 +23,7 @@
         @endif
 
         <div class="row">
-          @foreach($evenement as $evenement)
+          @foreach($evenements as $evenement)
             <div class="col-md-4 mb-4">
               <div class="card">
                 <img src="{{ $bien->image }}" class="card-img-top" alt="{{ $evenement->nom }}" height="300">

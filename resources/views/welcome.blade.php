@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -183,27 +182,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script>
         // Optionnel : Pour s'assurer que le carrousel démarre automatiquement au chargement de la page
