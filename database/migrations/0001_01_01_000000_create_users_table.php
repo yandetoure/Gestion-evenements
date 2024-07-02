@@ -13,12 +13,31 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('prenom');
+            $table->string('nom');
+            $table->string('adresse');
+            $table->date('date_de_naissance');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            // Champs pour les associations
+            $table->string('association_nom')->nullable();
+            $table->text('association_description')->nullable();
+            $table->string('association_logo')->nullable();
+            $table->string('association_localisation')->nullable();
+            $table->integer('association_numero')->nullable();
+            $table->string('association_secteur_activite')->nullable();
+            $table->string('association_ninea')->nullable();
+            $table->date('association_date_creation')->nullable();
+            $table->enum('association_statut', ['active', 'inactive'])->nullable();
+
+            // Champs pour les admins
+            $table->string('admin_prenom')->nullable();
+            $table->string('admin_nom')->nullable();
+            $table->integer('admin_telephone')->nullable();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
