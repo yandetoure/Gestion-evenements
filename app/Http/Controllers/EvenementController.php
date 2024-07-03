@@ -14,7 +14,7 @@ class EvenementController extends Controller
     }
 
     public function create(){
-        return view('events.create');
+        return view('layouts.events.create');
     }
 
     public function store(Request $request){

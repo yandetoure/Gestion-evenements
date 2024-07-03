@@ -9,6 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
+        body{
+            margin: 0px;
+
+        }
         .carousel-item {
             height: 70vh; /* Prendre toute la hauteur de la fenêtre */
         }
@@ -181,27 +185,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script>
         // Optionnel : Pour s'assurer que le carrousel démarre automatiquement au chargement de la page
